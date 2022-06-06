@@ -1,11 +1,14 @@
 import styled from "styled-components";
 
 const Card = styled.div`
-    width: 300px;
+    width: 200px;
     border-radius: 5px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    border: 2px solid black;
+    margin: 2px;
+    padding: 2px;
 `;
 
 const ProductCard = ({ name, image, price, category, isProduct }) => {

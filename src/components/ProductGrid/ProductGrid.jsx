@@ -3,15 +3,22 @@ import { useFeaturedProducts } from "../../utils/hooks/useFeaturedProducts";
 import styled from "styled-components";
 
 const ContentDiv = styled.div`
-display: flex;
-justify-content: space-between;
-flex-wrap: wrap;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  background: #efead8;
 `;
 
+const ContentDivTitle = styled.div`
+  background: #efead8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
 
 const ProductGrid = () => {
   const { data, isLoading } = useFeaturedProducts();
-  
+
   if (isLoading) {
     return <div>{"..."}</div>;
   }
@@ -19,7 +26,9 @@ const ProductGrid = () => {
   return (
     <>
       <div>
-        <h4>Featured Products</h4>
+        <ContentDivTitle>
+          <h4>Featured Products</h4>
+        </ContentDivTitle>
         <ContentDiv>
           {data.results.map((product) => (
             <ProductCard

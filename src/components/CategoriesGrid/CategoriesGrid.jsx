@@ -1,5 +1,21 @@
 import { useProductCategories } from "../../utils/hooks/useProductCategories";
 import ProductCard from "../ProductCard/ProductCard";
+import styled from "styled-components";
+
+const GridArea = styled.div`
+  background: #6d8b74;
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+  overflow: auto;
+`;
+
+const GridTitle = styled.div`
+  background: #6d8b74;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
 
 const CategoriesGrid = () => {
   const { data, isLoading } = useProductCategories();
@@ -9,9 +25,11 @@ const CategoriesGrid = () => {
 
   return (
     <section>
-      <h4>Categories</h4>
-      <div>
-        {data.results.map(({id, data}) => (
+      <GridTitle>
+        <h4>Categories</h4>
+      </GridTitle>
+      <GridArea>
+        {data.results.map(({ id, data }) => (
           <ProductCard
             key={id}
             id={id}
@@ -19,7 +37,7 @@ const CategoriesGrid = () => {
             image={data.main_image.url}
           />
         ))}
-      </div>
+      </GridArea>
     </section>
   );
 };

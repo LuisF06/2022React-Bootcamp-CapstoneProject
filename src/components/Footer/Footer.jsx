@@ -6,8 +6,8 @@ const FooterDiv = styled.div`
   align-items: center;
   font-size: 1rem;
   height: 50px;
-  background: #000000;
-  color: rgb(255, 255, 255);
+  background: #D0C9C0;
+  color: #000000;
 `;
 
 const Footer = () => {
