@@ -10,11 +10,18 @@ const GridArea = styled.div`
   overflow: auto;
 `;
 
-const GridTitle = styled.div`
+const GridTitleDiv = styled.div`
   background: #6d8b74;
   display: flex;
   justify-content: center;
   align-items: center;
+`;
+
+const GridTitle = styled.p`
+text-transform: uppercase;
+text-align: center;
+font-size: 1.2em;
+font-weight: bold;
 `;
 
 const CategoriesGrid = () => {
@@ -25,9 +32,9 @@ const CategoriesGrid = () => {
 
   return (
     <section>
-      <GridTitle>
-        <h4>Categories</h4>
-      </GridTitle>
+      <GridTitleDiv>
+        <GridTitle>Categories</GridTitle>
+      </GridTitleDiv>
       <GridArea>
         {data.results.map(({ id, data }) => (
           <ProductCard

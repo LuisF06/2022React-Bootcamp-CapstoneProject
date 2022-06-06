@@ -11,15 +11,35 @@ const Card = styled.div`
     padding: 2px;
 `;
 
+const CardTitle = styled.p`
+text-transform: capitalize;
+text-align: center;
+font-size: 0.875em;
+`;
+
+const CardCategory = styled.p`
+text-transform: capitalize;
+text-align: center;
+font-size: 0.875em;
+margin: 0;
+`;
+
+const CardPrice = styled.p`
+text-align: center;
+font-size: 1em;
+font-weight: bold;
+margin: 5px;
+`;
+
 const ProductCard = ({ name, image, price, category, isProduct }) => {
   return (
     <Card>
       <img src={image} alt={name}/>
-      <h6>{name}</h6>
+      <CardTitle>{name}</CardTitle>
       {isProduct && (
         <>
-          <h5>{category}</h5>
-          <h6>$ {price}</h6>
+          <CardCategory>{category}</CardCategory>
+          <CardPrice>$ {price}</CardPrice>
         </>
       )}
     </Card>

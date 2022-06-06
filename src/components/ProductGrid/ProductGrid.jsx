@@ -16,6 +16,13 @@ const ContentDivTitle = styled.div`
   align-items: center;
 `;
 
+const ContentTitle = styled.p`
+text-transform: uppercase;
+text-align: center;
+font-size: 1.2em;
+font-weight: bold;
+`;
+
 const ProductGrid = () => {
   const { data, isLoading } = useFeaturedProducts();
 
@@ -27,7 +34,7 @@ const ProductGrid = () => {
     <>
       <div>
         <ContentDivTitle>
-          <h4>Featured Products</h4>
+          <ContentTitle>Featured Products</ContentTitle>
         </ContentDivTitle>
         <ContentDiv>
           {data.results.map((product) => (
