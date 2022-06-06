@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 const ContentDiv = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   flex-wrap: wrap;
   background: #efead8;
 `;
