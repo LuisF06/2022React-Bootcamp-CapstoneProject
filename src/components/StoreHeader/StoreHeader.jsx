@@ -8,6 +8,8 @@ const Nav = styled.nav`
   display: flex;
   justify-content: space-between;
   padding: 0.5rem calc((100vw - 1440px) / 2);
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
 `;
 
 const NavLink = styled(Link)`
@@ -22,14 +24,19 @@ const NavLink = styled(Link)`
   &.active {
     color: #cdcdcd;
   }
+
+  :hover {
+    color: white;
+  }
 `;
 
 const StoreName = styled.div`
   display: flex;
   align-items: center;
   color: #cdcdcd;
+  font-familiy: "Heebo", sans-serif;
 
-  @media screen and (max-width: 800px){
+  @media screen and (max-width: 800px) {
     display: none;
   }
 `;
@@ -43,8 +50,8 @@ const StoreHeader = () => {
   return (
     <>
       <Nav>
-        <NavLink to="/" >
-          <FaShoppingBag size={56}/>
+        <NavLink to="/">
+          <FaShoppingBag size={56} />
         </NavLink>
         <StoreName> ECommerce Capstone Project: "The CapStore" </StoreName>
         <SearchBar>
@@ -57,7 +64,7 @@ const StoreHeader = () => {
           <button>Search</button>
         </SearchBar>
         <NavLink to="/">
-          <FaShoppingCart size={32}/>
+          <FaShoppingCart size={32} />
         </NavLink>
       </Nav>
     </>

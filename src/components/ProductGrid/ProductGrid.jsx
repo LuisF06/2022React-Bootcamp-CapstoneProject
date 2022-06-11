@@ -16,11 +16,31 @@ const ContentDivTitle = styled.div`
   align-items: center;
 `;
 
+const ContentDivButton = styled.div`
+  background: #efead8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
 const ContentTitle = styled.p`
-text-transform: uppercase;
-text-align: center;
-font-size: 1.2em;
-font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 1.2em;
+  font-weight: bold;
+`;
+
+const ViewAllButton = styled.button`
+  margin: 3px 3px 5px;
+  padding: 3px 8px;
+  border-radius: 4px;
+  background-color: black;
+  color: #efead8;
+
+  :hover {
+    background-color: #efead8;
+    color: black;
+  }
 `;
 
 const ProductGrid = () => {
@@ -49,6 +69,9 @@ const ProductGrid = () => {
             />
           ))}
         </ContentDiv>
+        <ContentDivButton>
+          <ViewAllButton>View All Products</ViewAllButton>
+        </ContentDivButton>
       </div>
     </>
   );
