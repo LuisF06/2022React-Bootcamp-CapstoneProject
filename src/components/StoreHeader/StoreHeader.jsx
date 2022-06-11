@@ -1,50 +1,5 @@
 import { FaShoppingBag, FaShoppingCart } from "react-icons/fa";
-import styled from "styled-components";
-import { NavLink as Link } from "react-router-dom";
-
-const Nav = styled.nav`
-  background: #5f7161;
-  height: 80px;
-  display: flex;
-  justify-content: space-between;
-  padding: 0.5rem calc((100vw - 1440px) / 2);
-  border-top-left-radius: 4px;
-  border-top-right-radius: 4px;
-`;
-
-const NavLink = styled(Link)`
-  color: #cdcdcd;
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  padding: 0 1rem;
-  height: 100%;
-  cursor: pointer;
-
-  &.active {
-    color: #cdcdcd;
-  }
-
-  :hover {
-    color: white;
-  }
-`;
-
-const StoreName = styled.div`
-  display: flex;
-  align-items: center;
-  color: #cdcdcd;
-  font-familiy: "Heebo", sans-serif;
-
-  @media screen and (max-width: 800px) {
-    display: none;
-  }
-`;
-
-const SearchBar = styled.div`
-  display: flex;
-  align-items: center;
-`;
+import { Nav, NavLink, StoreName, SearchBar } from "./style"
 
 const StoreHeader = () => {
   return (

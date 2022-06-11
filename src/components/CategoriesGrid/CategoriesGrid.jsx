@@ -1,28 +1,6 @@
 import { useProductCategories } from "../../utils/hooks/useProductCategories";
 import ProductCard from "../ProductCard/ProductCard";
-import styled from "styled-components";
-
-const GridArea = styled.div`
-  background: #6d8b74;
-  display: flex;
-  align-items: center;
-  padding: 10px 0;
-  overflow: auto;
-`;
-
-const GridTitleDiv = styled.div`
-  background: #6d8b74;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-
-const GridTitle = styled.p`
-text-transform: uppercase;
-text-align: center;
-font-size: 1.2em;
-font-weight: bold;
-`;
+import {GridArea, GridTitleDiv, GridTitle} from "./style"
 
 const CategoriesGrid = () => {
   const { data, isLoading } = useProductCategories();
