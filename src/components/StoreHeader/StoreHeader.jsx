@@ -5,7 +5,7 @@ const StoreHeader = () => {
   return (
     <>
       <Nav>
-        <NavLink to="/2022React-Bootcamp-CapstoneProject/Home">
+        <NavLink to="/2022React-Bootcamp-CapstoneProject">
           <FaShoppingBag size={56} />
         </NavLink>
         <StoreName> ECommerce Capstone Project: "The CapStore" </StoreName>
@@ -18,7 +18,7 @@ const StoreHeader = () => {
           />
           <SearchBarButton>Search</SearchBarButton>
         </SearchBar>
-        <NavLink to="/2022React-Bootcamp-CapstoneProject/Home">
+        <NavLink to="/2022React-Bootcamp-CapstoneProject">
           <FaShoppingCart size={32} />
         </NavLink>
       </Nav>

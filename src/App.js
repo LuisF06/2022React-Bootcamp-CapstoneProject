@@ -9,7 +9,7 @@ function App() {
     <>
       <StoreHeader />
       <Routes>
-        <Route index path="/2022React-Bootcamp-CapstoneProject/Home" element={<Home />} />
+        <Route index path="/2022React-Bootcamp-CapstoneProject" element={<Home />} />
         <Route path="/2022React-Bootcamp-CapstoneProject/ProductList" element={<ProductList />} />
       </Routes>
       <Footer />
