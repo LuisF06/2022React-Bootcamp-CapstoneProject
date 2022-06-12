@@ -30,7 +30,7 @@ const ProductGrid = () => {
           ))}
         </ContentDiv>
         <ContentDivButton>
-          <Link to="/productList">
+          <Link to="/2022React-Bootcamp-CapstoneProject/ProductList">
             <ViewAllButton>View All Products</ViewAllButton>
           </Link>
         </ContentDivButton>
