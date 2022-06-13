@@ -3,6 +3,7 @@ import { SideBarButton } from "./style";
 
 const SideBar = ({ categoryArray, setCategoryArray }) => {
   const { data, isLoading } = useProductCategories();
+  
   if (isLoading) {
     return <div>{"..."}</div>;
   }
@@ -14,12 +15,12 @@ const SideBar = ({ categoryArray, setCategoryArray }) => {
   };
   return (
     <>
-      {data.results.map(({ id, data }) => {
+      {data.results.map(({ id, data, slugs }) => {
         return (
           <div key={id}>
             <SideBarButton
-              onClick={() => handleCategory(data.name.toLowerCase())}
-              active={categoryArray.includes(data.name.toLowerCase())}
+              onClick={() => handleCategory(slugs[0].toLowerCase())}
+              active={categoryArray.includes(slugs[0].toLowerCase())}
             >
               {data.name}
             </SideBarButton>

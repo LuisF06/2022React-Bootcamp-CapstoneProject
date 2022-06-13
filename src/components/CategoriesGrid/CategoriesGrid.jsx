@@ -1,6 +1,6 @@
 import { useProductCategories } from "../../utils/hooks/useProductCategories";
 import ProductCard from "../ProductCard/ProductCard";
-import {GridArea, GridTitleDiv, GridTitle} from "./style"
+import { GridArea, GridTitleDiv, GridTitle } from "./style";
 
 const CategoriesGrid = () => {
   const { data, isLoading } = useProductCategories();
