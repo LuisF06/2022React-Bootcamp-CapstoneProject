@@ -1,16 +1,14 @@
-import "./loading.css";
+import { LoadingContainer, Load, Spinner } from "./style";
 
 const Loading = () => {
   return (
     <>
-      <div className="LoadingContainer">
-        <div className="Load">
+      <LoadingContainer>
+        <Load>
           <p>Loading, Please Wait ...</p>
-          <div className="Line" />
-          <div className="Line" />
-          <div className="Line" />
-        </div>
-      </div>
+          <Spinner/>
+        </Load>
+      </LoadingContainer>
     </>
   );
 };

@@ -17,9 +17,16 @@ const ProductList = () => {
   const { data, isLoading } = useProducts();
   const [categoryArray, setCategoryArray] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState(null);
+  const [loadingState, setLoadingState] = useState(true);
 
+  setTimeout(() => { 
+    if (isLoading === true)
+    {
+      setLoadingState(false)
+    }}, 2000);
+  
   useEffect(() => {
-    const filtered = data.results?.filter((product) =>
+      const filtered = data.results?.filter((product) =>
       categoryArray?.includes(product.data.category.slug)
     );
     setFilteredProducts(filtered);
@@ -27,8 +34,8 @@ const ProductList = () => {
 
   return (
     <>
-      {isLoading ? (
-        <Loading/>
+      {loadingState ? (
+        <Loading />
       ) : (
         <ProductListContent>
           <PLLeftSide>
