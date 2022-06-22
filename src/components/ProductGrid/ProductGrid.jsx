@@ -1,27 +1,7 @@
 import ProductCard from "../ProductCard/ProductCard";
 import { useFeaturedProducts } from "../../utils/hooks/useFeaturedProducts";
-import styled from "styled-components";
-
-const ContentDiv = styled.div`
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  background: #efead8;
-`;
-
-const ContentDivTitle = styled.div`
-  background: #efead8;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-
-const ContentTitle = styled.p`
-text-transform: uppercase;
-text-align: center;
-font-size: 1.2em;
-font-weight: bold;
-`;
+import { NavLink as Link } from "react-router-dom";
+import { ContentDiv,ContentDivTitle, ContentTitle, ContentDivButton, ViewAllButton } from "./style";
 
 const ProductGrid = () => {
   const { data, isLoading } = useFeaturedProducts();
@@ -49,6 +29,11 @@ const ProductGrid = () => {
             />
           ))}
         </ContentDiv>
+        <ContentDivButton>
+          <Link to="/2022React-Bootcamp-CapstoneProject/ProductList">
+            <ViewAllButton>View All Products</ViewAllButton>
+          </Link>
+        </ContentDivButton>
       </div>
     </>
   );
