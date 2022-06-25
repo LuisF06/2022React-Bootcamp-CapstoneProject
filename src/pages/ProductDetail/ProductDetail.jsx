@@ -21,21 +21,24 @@ import {
 const ProductDetail = () => {
   const { data, isLoading } = useProducts();
   const { productId } = useParams();
+  //const [ index, setIndex ] = useState(0);
 
-  console.log(productId)
-  /*if (isLoading === false)
-  {
-    index = data.results.map((object => object.id).indexOf(productId));
-  }*/
+  console.log(productId);
+  console.log(String(isLoading) + " " + String(typeof data.results));
 
-  console.log( String(isLoading) + " " + String(typeof data.results))
+  /*if (isLoading === false) {
+      const temp = data.results?.map(((object) => object.id).indexOf(productId));
+      setIndex(temp);
+  }
+  console.log(index)*/
+  
+  
 
   return (
     <>
       {isLoading ? (
         <Loading />
       ) : (
-        
         <ProductContainer>
           <ProductImageContainer>hola</ProductImageContainer>
 
