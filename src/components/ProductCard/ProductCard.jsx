@@ -1,16 +1,24 @@
-import { Card, CardTitle, CardCategory, CardPrice } from "./style";
+import {
+  AddButton,
+  Card,
+  CardTitle,
+  CardCategory,
+  CardPrice,
+  NavLink,
+} from "./style";
 
-const ProductCard = ({ name, image, price, category, isProduct }) => {
+const ProductCard = ({ name, image, price, category, id }) => {
+  const product = "/product/" + id;
   return (
     <Card>
-      <img src={image} alt={name}/>
-      <CardTitle>{name}</CardTitle>
-      {isProduct && (
-        <>
-          <CardCategory>{category}</CardCategory>
-          <CardPrice>$ {price}</CardPrice>
-        </>
-      )}
+      <img src={image} alt={name} />
+      <NavLink to={product}>
+        <CardTitle>{name}</CardTitle>
+      </NavLink>
+
+      <CardCategory>{category}</CardCategory>
+      <CardPrice>$ {price}</CardPrice>
+      <AddButton>Add to Cart</AddButton>
     </Card>
   );
 };

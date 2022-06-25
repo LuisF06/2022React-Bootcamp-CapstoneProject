@@ -1,5 +1,5 @@
 import { useProductCategories } from "../../utils/hooks/useProductCategories";
-import ProductCard from "../ProductCard/ProductCard";
+import CategoryCard from "../CategoryCard/CategoryCard";
 import { GridArea, GridTitleDiv, GridTitle } from "./style";
 
 const CategoriesGrid = () => {
@@ -15,7 +15,7 @@ const CategoriesGrid = () => {
       </GridTitleDiv>
       <GridArea>
         {data.results.map(({ id, data }) => (
-          <ProductCard
+          <CategoryCard
             key={id}
             id={id}
             name={data.name}

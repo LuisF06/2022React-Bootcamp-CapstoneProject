@@ -3,7 +3,7 @@ import { SideBarButton } from "./style";
 
 const SideBar = ({ categoryArray, setCategoryArray }) => {
   const { data, isLoading } = useProductCategories();
-  
+
   if (isLoading) {
     return <div>{"..."}</div>;
   }
@@ -13,6 +13,11 @@ const SideBar = ({ categoryArray, setCategoryArray }) => {
       ? setCategoryArray(categoryArray.filter((item) => item !== category))
       : setCategoryArray([...categoryArray, category]);
   };
+
+  const handleReset = () => {
+    setCategoryArray([]);
+  };
+
   return (
     <>
       {data.results.map(({ id, data, slugs }) => {
@@ -27,9 +32,9 @@ const SideBar = ({ categoryArray, setCategoryArray }) => {
           </div>
         );
       })}
+      <SideBarButton onClick={handleReset}>Clear Filters</SideBarButton>
     </>
   );
 };
 
 export default SideBar;
-

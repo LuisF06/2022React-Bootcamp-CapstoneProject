@@ -1,11 +1,15 @@
+//import { useCallback } from "react";
 import { FaShoppingBag, FaShoppingCart } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 import { Nav, NavLink, StoreName, SearchBar, SearchBarButton } from "./style";
 
 const StoreHeader = () => {
+  const navigate = useNavigate();
+
   return (
     <>
       <Nav>
-        <NavLink to="/2022React-Bootcamp-CapstoneProject">
+        <NavLink to="/home">
           <FaShoppingBag size={56} />
         </NavLink>
         <StoreName> ECommerce Capstone Project: "The CapStore" </StoreName>
@@ -16,9 +20,15 @@ const StoreHeader = () => {
             name="Search"
             placeholder="Search"
           />
-          <SearchBarButton>Search</SearchBarButton>
+          <SearchBarButton
+            onClick={() => {
+              navigate("/search");
+            }}
+          >
+            Search
+          </SearchBarButton>
         </SearchBar>
-        <NavLink to="/2022React-Bootcamp-CapstoneProject">
+        <NavLink to="/home">
           <FaShoppingCart size={32} />
         </NavLink>
       </Nav>

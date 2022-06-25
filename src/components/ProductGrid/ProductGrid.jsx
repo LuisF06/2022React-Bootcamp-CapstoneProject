@@ -25,12 +25,11 @@ const ProductGrid = () => {
               image={product.data.mainimage.url}
               price={product.data.price}
               category={product.data.category.slug}
-              isProduct={true}
             />
           ))}
         </ContentDiv>
         <ContentDivButton>
-          <Link to="/2022React-Bootcamp-CapstoneProject/ProductList">
+          <Link to="/products">
             <ViewAllButton>View All Products</ViewAllButton>
           </Link>
         </ContentDivButton>

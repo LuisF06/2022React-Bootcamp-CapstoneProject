@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useProducts } from "../../utils/hooks/useProducts";
+//import { useSearchParams } from "react-router-dom";
 import Sidebar from "../../components/SideBar";
 import ProductCard from "../../components/ProductCard/ProductCard";
 import Loading from "../../components/Loading";
@@ -18,19 +19,26 @@ const ProductList = () => {
   const [categoryArray, setCategoryArray] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState(null);
   const [loadingState, setLoadingState] = useState(true);
+  //const [searchParams] = useSearchParams();
 
-  setTimeout(() => { 
-    if (isLoading === true)
-    {
-      setLoadingState(false)
-    }}, 2000);
-  
+  setTimeout(() => {
+    if (isLoading === true) {
+      setLoadingState(false);
+    }
+    
+  }, 2000);
+
   useEffect(() => {
-      const filtered = data.results?.filter((product) =>
+    /*const category = searchParams.get("category");
+    if (category) {
+      return setCategoryArray([...categoryArray, category.toLowerCase()]);
+    }*/
+
+    const filtered = data.results?.filter((product) =>
       categoryArray?.includes(product.data.category.slug)
     );
     setFilteredProducts(filtered);
-  }, [categoryArray, data.results]);
+  }, [categoryArray, data.results/*, searchParams*/]);
 
   return (
     <>
@@ -55,7 +63,6 @@ const ProductList = () => {
                       image={product.data.mainimage.url}
                       price={product.data.price}
                       category={product.data.category.slug}
-                      isProduct={true}
                     />
                   ))
                 : filteredProducts.map((product) => (
