@@ -1,5 +1,5 @@
-import { useProducts } from "../../utils/hooks/useProducts";
-import { useParams } from "react-router-dom";
+import { useProjectData } from "../../utils/hooks/useProjectData";
+import { Carousel } from "react-responsive-carousel";
 import Loading from "../../components/Loading";
 import {
   CartButton,
@@ -16,23 +16,14 @@ import {
   QuantityInput,
   TagIcon,
 } from "./style";
-//import { useState } from "react";
 
 const ProductDetail = () => {
-  const { data, isLoading } = useProducts();
-  const { productId } = useParams();
-  //const [ index, setIndex ] = useState(0);
-
-  console.log(productId);
-  console.log(String(isLoading) + " " + String(typeof data.results));
-
-  /*if (isLoading === false) {
-      const temp = data.results?.map(((object) => object.id).indexOf(productId));
-      setIndex(temp);
-  }
-  console.log(index)*/
-  
-  
+  const { data, isLoading } = useProjectData(
+    "",
+    "1",
+    "",
+    window.location.pathname.split("/")[2]
+  );
 
   return (
     <>
@@ -40,7 +31,15 @@ const ProductDetail = () => {
         <Loading />
       ) : (
         <ProductContainer>
-          <ProductImageContainer>hola</ProductImageContainer>
+          <ProductImageContainer>
+            <Carousel width="85%">
+              {data.results[0].data.images.map((item, index) => (
+                <div key={index}>
+                  <img alt={item.image.alt} src={item.image.url} />
+                </div>
+              ))}
+            </Carousel>
+          </ProductImageContainer>
 
           <ProductInfoContainer>
             <ProductDescription>

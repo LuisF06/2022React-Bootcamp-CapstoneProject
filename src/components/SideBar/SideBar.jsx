@@ -1,40 +1,78 @@
 import { useProductCategories } from "../../utils/hooks/useProductCategories";
 import { SideBarButton } from "./style";
+import { useEffect } from "react";
+import PropTypes from "prop-types";
 
 const SideBar = ({ categoryArray, setCategoryArray }) => {
   const { data, isLoading } = useProductCategories();
 
-  if (isLoading) {
-    return <div>{"..."}</div>;
+  useEffect(() => {
+    /*function setCategoryFromQuery() {
+      let params = new URL(document.location).searchParams;
+      let query = params.get("category");
+      if (query) {
+        return setCategoryArray([...categoryArray, query.toLowerCase()]);
+      }
+      return true;
+    }
+
+
+    setCategoryFromQuery();*/
+  });
+
+  const handleCategory = (value) => {
+    return categoryArray.indexOf(value) === -1
+      ? setCategoryArray([...categoryArray, value])
+      : setCategoryArray(categoryArray.filter((item) => item !== value));
+  };
+
+  function clearFilters() {
+    return setCategoryArray([]);
   }
-
-  const handleCategory = (category) => {
-    categoryArray.includes(category)
-      ? setCategoryArray(categoryArray.filter((item) => item !== category))
-      : setCategoryArray([...categoryArray, category]);
-  };
-
-  const handleReset = () => {
-    setCategoryArray([]);
-  };
 
   return (
     <>
-      {data.results.map(({ id, data, slugs }) => {
-        return (
-          <div key={id}>
-            <SideBarButton
-              onClick={() => handleCategory(slugs[0].toLowerCase())}
-              active={categoryArray.includes(slugs[0].toLowerCase())}
-            >
-              {data.name}
-            </SideBarButton>
+      {!isLoading && (
+        <>
+          <div id="sidebar-container">
+            {data.results.map((category) => {
+              const categoryName = category.data.name;
+              const categorySlug = category.slugs[0];
+              return (
+                <div key={category.id}>
+                  <SideBarButton
+                    onClick={() =>
+                      handleCategory(categorySlug.toLowerCase())
+                    }
+                    active={categoryArray.includes(categorySlug.toLowerCase())}
+                  >
+                    {categoryName}
+                  </SideBarButton>
+                </div>
+              );
+            })}
+            {categoryArray.length >= 1 && (
+              <div className="buttonContainer">
+                <SideBarButton
+                  onClick={() => {
+                    clearFilters();
+                  }}
+                >
+                  {" "}
+                  Clear all filters
+                </SideBarButton>
+              </div>
+            )}
           </div>
-        );
-      })}
-      <SideBarButton onClick={handleReset}>Clear Filters</SideBarButton>
+        </>
+      )}
     </>
   );
+};
+
+SideBar.propTypes = {
+  categoryArray: PropTypes.array.isRequired,
+  setCategoryArray: PropTypes.func.isRequired,
 };
 
 export default SideBar;

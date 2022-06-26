@@ -14,12 +14,13 @@ const CategoriesGrid = () => {
         <GridTitle>Categories</GridTitle>
       </GridTitleDiv>
       <GridArea>
-        {data.results.map(({ id, data }) => (
+        {data.results.map(({ id, data, slugs }) => (
           <CategoryCard
             key={id}
             id={id}
             name={data.name}
             image={data.main_image.url}
+            link={`/products?category=${slugs[0]}`}
           />
         ))}
       </GridArea>

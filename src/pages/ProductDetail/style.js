@@ -13,12 +13,10 @@ export const ProductContainer = styled.div`
 `;
 
 export const ProductImageContainer = styled.div`
-  width: 60%;
-  align-items: center;
-  justify-items: center;
-  flex-direction: column;
-  display: flex;
-  justify-content: center;
+  width: 35%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 
   @media (max-width: 800px) {
     width: 100% !important;
@@ -26,7 +24,7 @@ export const ProductImageContainer = styled.div`
 `;
 
 export const ProductInfoContainer = styled.div`
-  width: 40%;
+  width: 65%;
   margin-top: 60px;
   flex-direction: column;
 
@@ -87,7 +85,6 @@ export const ProductPrice = styled.span`
 export const QuantityInput = styled.input.attrs({ type: "number" })`
   margin: 10px 20px;
 `;
-
 
 export const CartButton = styled.button`
   margin: 3px 3px 5px;

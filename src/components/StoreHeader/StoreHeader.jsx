@@ -1,10 +1,16 @@
-//import { useCallback } from "react";
 import { FaShoppingBag, FaShoppingCart } from "react-icons/fa";
+import { createRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { Nav, NavLink, StoreName, SearchBar, SearchBarButton } from "./style";
 
 const StoreHeader = () => {
   const navigate = useNavigate();
+  const redirectToSearch = () => {
+    console.log(textInput.current.value);
+    navigate(`/search?q=${textInput.current.value}`);
+  };
+
+  let textInput = createRef();
 
   return (
     <>
@@ -19,10 +25,11 @@ const StoreHeader = () => {
             type="search"
             name="Search"
             placeholder="Search"
+            ref={textInput}
           />
           <SearchBarButton
             onClick={() => {
-              navigate("/search");
+              redirectToSearch();
             }}
           >
             Search
