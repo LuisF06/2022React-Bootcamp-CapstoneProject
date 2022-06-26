@@ -7,6 +7,7 @@ const SideBar = ({ categoryArray, setCategoryArray }) => {
   const { data, isLoading } = useProductCategories();
 
   useEffect(() => {
+    //TODO: Fix Infinite render Bug
     /*function setCategoryFromQuery() {
       let params = new URL(document.location).searchParams;
       let query = params.get("category");
@@ -15,9 +16,7 @@ const SideBar = ({ categoryArray, setCategoryArray }) => {
       }
       return true;
     }
-
-
-    setCategoryFromQuery();*/
+    setCategoryFromQuery();*/ 
   });
 
   const handleCategory = (value) => {

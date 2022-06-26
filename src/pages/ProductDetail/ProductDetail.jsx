@@ -1,4 +1,4 @@
-import { useProjectData } from "../../utils/hooks/useProjectData";
+import { useProductData } from "../../utils/hooks/useProductData";
 import { Carousel } from "react-responsive-carousel";
 import Loading from "../../components/Loading";
 import {
@@ -18,7 +18,7 @@ import {
 } from "./style";
 
 const ProductDetail = () => {
-  const { data, isLoading } = useProjectData(
+  const { data, isLoading } = useProductData(
     "",
     "1",
     "",
