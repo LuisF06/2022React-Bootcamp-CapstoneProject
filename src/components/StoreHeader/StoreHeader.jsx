@@ -6,7 +6,7 @@ import { Nav, NavLink, StoreName, SearchBar, SearchBarButton } from "./style";
 const StoreHeader = () => {
   const navigate = useNavigate();
   const redirectToSearch = () => {
-    console.log(textInput.current.value);
+    // console.log(textInput.current.value); //For Debug Purposes
     navigate(`/search?q=${textInput.current.value}`);
   };
 
