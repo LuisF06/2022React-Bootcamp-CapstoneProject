@@ -7,5 +7,9 @@ export const SideBarButton = styled.button`
   padding: 3px 8px;
   border-radius: 4px;
   width: 60%;
+
+  :hover {
+    background-color: black;
+    color: #efead8;
 `;
 

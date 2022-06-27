@@ -6,6 +6,9 @@ export const GridArea = styled.div`
   align-items: center;
   padding: 10px 0;
   overflow: auto;
+  @media screen and (min-width: 1085px) {
+    justify-content: center;
+  }
 `;
 
 export const GridTitleDiv = styled.div`
