@@ -35,7 +35,7 @@ const StoreHeader = () => {
             Search
           </SearchBarButton>
         </SearchBar>
-        <NavLink to="/home">
+        <NavLink to="/cart">
           <FaShoppingCart size={32} />
         </NavLink>
       </Nav>

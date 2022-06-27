@@ -1,6 +1,7 @@
 import {useState, useEffect} from 'react';
 import {API_BASE_URL} from '../constants';
 import {useLatestAPI} from './useLatestAPI';
+import PropTypes from "prop-types";
 
 export function useProductData(type, pageSize, tags, productId, searchTerm) {
     const {ref: apiRef, isLoading: isApiMetadataLoading} = useLatestAPI();
@@ -65,3 +66,11 @@ export function useProductData(type, pageSize, tags, productId, searchTerm) {
 
     return data;
 }
+
+useProductData.PropTypes ={
+    type: PropTypes.string.isRequired,
+    pageSize: PropTypes.number.isRequired,
+    tags: PropTypes.string.isRequired,
+    productId: PropTypes.string.isRequired,
+    searchTerm: PropTypes.string.isRequired,
+};
